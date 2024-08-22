@@ -1,0 +1,43 @@
+﻿name,smarts
+alkane,[CX4]
+-CH-,[CX4;H1]
+-CH2-,[CX4;H2]
+-CH3,[CX4;H3]
+-CH(CH3)2,[CX4;H1]([CH3])[CH3]
+-C(CH3)3,[CX4;H0]([CH3])([CH3])[CH3]
+alkene,[CX3]=[CX3]
+-CH=CH2,[CX3;H1]=[CH2]
+-CH=CH-,[CX3;H1]=[CX3;H1]
+-C=CH2,[CX3;H0]=[CH2]
+-C=CH-,[CX3;H0]=[CX3;H1]
+-C=C-,[CX3;H0]=[CX3;H0]
+-CH=C=CH2,[CX3;H1]=[C]=[CH2]
+alkyne,[CX2]#C
+aromatics,"[$([cX3](:*):*),$([cX2+](:*):*)]"
+alkyl halides,"[#6][F,Cl,Br,I]"
+alcohols,[#6][OX2H]
+primary alcohols,[#6][#6X4;H2][OX2H]
+secondary alcohols,[#6][#6X4;H1]([#6])[OX2H]
+tertiary alcohols,[#6][#6X4;H0]([#6])([#6])[OX2H]
+phenol,[OX2H][cX3]:[c]
+esters,[#6][CX3](=O)[OX2H0][#6]
+ketones,[#6][CX3](=O)[#6]
+aldehydes,[CX3H1](=O)[#6]
+carboxylic acids,[CX3](=O)[OX2H1]
+ether,[OX2;!$(OC=O)]([#6])[#6]
+acyl halides,"[CX3](=[OX1])[F,Cl,Br,I]"
+amines,[NX3;!$(NC=O)]
+primary amines,[NX3;H2;!$(NC=O)]
+secondary amines,[NX3;H1;!$(NC=O)]
+tertiary amines,[NX3;H0;!$(NC=O)]
+amides,[NX3][CX3](=[OX1])[#6]
+primary amides,[NX3;H2][CX3](=[OX1])[#6]
+secondary amides,[NX3;H1][CX3](=[OX1])[#6]
+tertiary amides,[NX3;H0][CX3](=[OX1])[#6]
+nitriles,[NX1]#[CX2]
+nitro,"[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
+-N=C=O,[#7]=[C]=[O]
+-N=C=S,[#7]=[C]=[S]
+ortho,*-!:aa-!:*
+meta,*-!:aaa-!:*
+para,*-!:aaaa-!:*
