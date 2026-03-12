@@ -8,55 +8,54 @@ Paper: Infrared Spectral Analysis for Prediction of Functional Groups Based On F
 
 ## 1. /dataset
 * ab_IR_gas.csv \
-经过筛选后保留的红外光谱文件及其波数采样范围等信息
+IR spectra files retained after filtering and their wavenumber sampling ranges and other information
 * dataset_824p_all.csv \
-分子官能团标签及红外光谱数据集，光谱特征数为824
+Molecular functional group labels and IR spectra dataset, spectral feature count: 824
 * dataset_1647_all.csv \
-分子官能团标签及红外光谱数据集，光谱特征数为1647
+Molecular functional group labels and IR spectra dataset, spectral feature count: 1647
 * dataset_1647_SMILES.csv \
-分子SMILES及红外光谱数据集，光谱特征数为1647
+Molecular SMILES and IR spectra dataset, spectral feature count: 1647
 * functionalGroupList.csv \
-分子官能团标签及相应的SMARTS描述符
+Molecular functional group labels and corresponding SMARTS descriptors
 * functionalGroupTag.csv \
-由RDKit识别的分子官能团标签
+Molecular functional group labels recognized by RDKit
 * inchi.csv \
-气态红外光谱对应的化合物结构描述符InChI
+InChI descriptors corresponding to gas-phase IR spectra
 * normData_1647.csv \
-MinMax归一化后的红外光谱数据，特征点数为1647
+IR spectra data after MinMax normalization, spectral feature count: 1647
 
 ## 2. /importance
 * 824p_IR_global_importance_5fold1_seed128 \
-用特征维度为824的红外光谱预测官能团，Simply-explainer得到的预测模型中每个官能团的重要性。
+Using IR spectra (824 features) to predict functional groups, the importance of each functional group in the prediction model obtained by Simply-explainer.
 * 824p_IR_global_importance_fold1_top10.csv \
-从上述文件中筛选出的每个官能团最重要的10处特征波数。
+The 10 most important characteristic wavenumber positions for each functional group obtained from the above file.
 
 ## 3. /model
 * {POINTS}_IR_aggmap_correlation_c{CHANNEL NUMBER}.mp \
-用correlation距离生成的红外光谱AggMap模型，{POINTS}是特征点数，{CHANNEL NUMBER}是通道数
+IR spectra AggMap model generated using correlation distance, {POINTS} is the count of feature points, {CHANNEL NUMBER} is the number of channels
 * 1647_IR_{functional group}_aggmap_correlation_c10.mp \
-针对某个官能团子结构的红外光谱生成的10通道AggMap模型
+10-channel AggMap model generated for IR spectra of a certain {functional group}
 * 824p_IR_MultiLabel_c10_fold{fold number}_seed128.h5 \
-用特征维度为824的红外光谱得到的多标签模型，五折交叉
+Multi-label model trained on IR spectra (824 features), five-fold cross-validation
 
 ## 4. others
-主要为代码文件
+Mainly code files.
 
 * getDataFromNIST.ipynb \
-从NIST Chemistry WebBook上下载数据并筛选
+Download data from NIST Chemistry WebBook and filter.
 * processData.ipynb \
-对红外光谱数据点进行归一化等预处理，生成normData_1647.csv
+Perform normalization and other preprocessing on IR spectra data, generate normData_1647.csv.
 * findFuncGrp.ipynb \
-标记分子官能团标签，生成完整的数据集dataset_1647_all.csv
+Assign molecular functional group labels, generate the complete dataset dataset_1647_all.csv.
 * inchi2smiles.ipynb \
-将数据集中化合物的结构转换为SMILES表示，并与相应的红外光谱进行合并，生成dataset_1647_SMILES.csv
+Convert the structures of compounds in the dataset to SMILES strings, and merge them with corresponding IR spectra, generate dataset_1647_SMILES.csv.
 * feature_map.ipynb \
-训练及可视化AggMap特征图
+Train and visualize AggMap feature maps.
 * train2Class.ipynb \
-官能团的二分类预测
+Binary classification prediction of functional groups.
 * trainMultiLabel.ipynb \
-官能团的多标签预测
+Multi-label prediction of functional groups.
 * trainMultiLabelSub.py \
-对主要官能团的子结构进行多标签预测
+Perform multi-label prediction on substructures of major functional groups.
 * interpretMutilLabel.ipynb \
-多标签模型的重要性解释，使用Simply-explainer
-
+Importance interpretation of trained multi-label models, using Simply-explainer.
