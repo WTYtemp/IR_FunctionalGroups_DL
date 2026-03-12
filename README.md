@@ -2,7 +2,7 @@
 Paper: Infrared Spectral Analysis for Prediction of Functional Groups Based On Feature Aggregated Deep Learning
 
 ## Requirements
-* AggMap (bidd-aggmap)
+* AggMap [(bidd-aggmap)](https://github.com/shenwanxiang/bidd-aggmap)
 * RDKit
 * nistchempy
 
